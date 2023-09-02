@@ -16,7 +16,7 @@ html {
   transition: 0.2s linear;
 }
 body {
-  background: linear-gradient(60deg, #e2e1e1 0%, #cdc3c3 51%, #aba5a5 85%);
+  background: #fff;
 }
 /* =============================== */
 /* vertical navigation bar */
