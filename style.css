@@ -16,7 +16,7 @@ html {
   transition: 0.2s linear;
 }
 body {
-  background: #edeaea;
+  background: rgba(219, 211, 201, 0.6);
 }
 /* =============================== */
 /* vertical navigation bar */
@@ -124,7 +124,7 @@ body {
 /* =============================== */
 .main-content {
   max-width: 1100px;
-  padding: 180px 100px;
+  padding: 90px 100px;
   width: 100%;
   margin: auto;
 }
@@ -135,11 +135,11 @@ body {
   text-align: center;
 }
 .img-container img {
-  border-radius: 50%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
   width: 400px;
-  height: 55vh;
-  object-fit: cover;
-  margin: auto 0;
+  height: auto;
+  filter: drop-shadow(25px 12px 12px #789694);
 }
 .hero .text-container .section-text-1 {
   font-size: 24px;
@@ -148,7 +148,6 @@ body {
 .hero .text-container .section-text-2 {
   font-size: 26px;
   font-weight: 500;
-  color: #8db1af;
 }
 .hero .text-container .section-text-2 {
   color: #45505b;
@@ -161,6 +160,8 @@ body {
   margin-right: 10px;
   background: #8db1af;
   border-radius: 20px;
+  border: none;
+  transition: 0.3s ease;
   /* outline: 1px solid #45505b; */
 }
 .main-content button a {
@@ -169,6 +170,7 @@ body {
 }
 .main-content .btn-container button:hover {
   background: rgba(141, 177, 175, 0.4);
+  transform: scale(1.03);
 }
 .main-content .btn-container button a:hover {
   color: #45505b;
@@ -181,10 +183,10 @@ body {
   color: #f2f3f5;
   background: #8db1af;
   /* outline: 1px solid#45505b; */
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  padding: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 9px;
   cursor: pointer;
   transition: 0.5s ease;
 }
@@ -208,10 +210,15 @@ body {
 }
 .about .card {
   width: 80%;
-  outline: 2px solid #272829;
+  outline: none;
+  border: none;
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
   border-radius: 20px;
   margin: auto;
   overflow: hidden;
+}
+.about .card:hover {
+  box-shadow: 10px 10px 35px 0 rgba(0, 0, 0, 0.08);
 }
 .about h2 {
   color: #8db1af;
@@ -225,7 +232,7 @@ body {
   text-align: end;
 }
 .about .skill-bar .bar {
-  width: 100%;
+  width: 0px;
   height: 5px;
   background: #ccc;
   margin-bottom: 20px;
@@ -237,31 +244,32 @@ body {
   height: 100%;
   width: 100%;
   background: #8db1af;
+  transition: width 0.5s ease-in-out;
 }
-.about .skill-bar .bar1 span {
-  width: 95%;
-}
-.about .skill-bar .bar2 span {
-  width: 85%;
-}
-.about .skill-bar .bar3 span {
-  width: 80%;
-}
-.about .skill-bar .bar4 span {
-  width: 85%;
-}
-.about .skill-bar .bar5 span {
-  width: 70%;
-}
+
 /* =============================== */
 /* About me section ends here*/
 /* =============================== */
 /* =============================== */
 /* portfolio section*/
 /* =============================== */
-/* section {
+section {
   height: 100vh;
+}
+/* section .content {
+  transform: translateX(200%);
+  transition: transform 0.4s ease;
+}
+section .content:nth-last-of-type(even) {
+  transform: translateX(-200%);
+}
+section .content.show {
+  transform: translateX(0);
 } */
+footer section {
+  height: 100px;
+}
+
 .portfolio .card {
   overflow: hidden;
   border-radius: 15px;
@@ -306,16 +314,16 @@ body {
 /* =============================== */
 /* purecounter section*/
 /* =============================== */
-.portfolio .count-box {
+.count-box {
   padding: 30px 0px 25px;
   margin-top: 30px;
   width: 100%;
   position: relative;
   text-align: center;
-  background: #f3f2f2;
+  background: transparent;
 }
 
-.portfolio .count-box i {
+.count-box i {
   position: absolute;
   top: -25px;
   left: 50%;
@@ -331,40 +339,51 @@ body {
   height: 48px;
 }
 
-.portfolio .count-box span {
+.count-box span {
   font-size: 36px;
   display: block;
   font-weight: 600;
   color: #011426;
 }
 
-.portfolio .count-box p {
+.count-box p {
   padding: 0;
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
 }
 .carousel-indicators {
-  bottom: -60px;
+  bottom: -90px;
+  margin-top: 20px;
   font-weight: 500;
+  text-align: center;
 }
 .carousel-indicators li {
   background: #272829;
-  width: 10px;
-  height: 0;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   font-weight: 700;
   margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  cursor: pointer;
 }
+.carousel-indicators li.active {
+  background-color: #272829; /* Change the background color of the active indicator */
+}
+
 /* =============================== */
 /* portfolio section ends here*/
 /* =============================== */
 
 .services .icon-box {
   text-align: center;
-  padding: 70px 20px 80px 20px;
+  padding: 70px 10px 50px 10px;
   transition: all ease-in-out 0.3s;
   background: #fff;
+  width: 300px;
+  height: 280px;
   border-radius: 20px;
   box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
 }
@@ -490,6 +509,9 @@ body {
 .services .iconbox-teal:hover .icon path {
   fill: #11dbcf;
 }
+.contact .content {
+  padding: 200px 10px;
+}
 .contact .container {
   display: flex;
   flex-direction: column;
@@ -500,18 +522,22 @@ body {
   height: 200px;
   margin-bottom: 40px;
   border-radius: 20px;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.09);
 }
 .contact .card i {
   font-size: 30px;
   margin-bottom: 10px;
   color: #8db1af;
 }
+.contact .card:hover {
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
 .contact .card:hover i {
   color: #272829;
 }
-.contact .card:hover {
-  background: #ccc;
-}
+
 .contact .card a {
   color: #272829;
   text-decoration: none;
@@ -547,6 +573,7 @@ body {
   margin-top: 7px;
   margin-right: 5px;
 } */
+
 footer a .btn {
   border-radius: 10px;
 }
@@ -569,14 +596,14 @@ footer a .btn {
     position: fixed;
     top: 0;
     right: -100%;
-    max-width: 150px;
+    max-width: 200px;
     width: 100%;
     height: 100vh;
     background: rgba(141, 177, 175, 0.5);
-    transition: 0.5s ease;
+    transition: 0.3s ease;
   }
   .nav-bar .menu-list.active {
-    right: 0;
+    right: 35px;
   }
   .nav-bar a span,
   .nav-bar a:focus span {
@@ -604,6 +631,12 @@ footer a .btn {
     object-fit: cover;
     border-radius: 50%;
   }
+  section {
+    height: auto;
+  }
+  .contact .content {
+    padding: 100px 10px;
+  }
   .section-container {
     flex-direction: column;
   }
@@ -612,6 +645,13 @@ footer a .btn {
   }
   .services .icon-box {
     width: 400px;
+  }
+  .carousel-indicators {
+    bottom: -60px;
+  }
+  .carousel-indicators li {
+    width: 7px;
+    height: 3px;
   }
 }
 @media (max-width: 768px) {
