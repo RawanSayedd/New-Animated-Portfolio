@@ -103,3 +103,41 @@ function isScrolledIntoView(id) {
 }
 
 window.addEventListener("scroll", move);
+
+///////////////////////////
+//portfolio cards
+window.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".col-md-4"); // Select all the card elements
+
+  // Show only a subset of cards, e.g., the first two
+  for (let i = 0; i < cards.length; i++) {
+    if (i < 3) {
+      cards[i].style.display = "block";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+});
+// Function to filter the cards based on the button clicked
+function filterCards(category) {
+  const cards = document.querySelectorAll(".col-md-4"); // Get all the cards
+
+  cards.forEach((card) => {
+    // Check if the category matches or if the category is 'all'
+    if (category === "all" || card.classList.contains(category)) {
+      card.style.display = "block"; // Show the card
+    } else {
+      card.style.display = "none"; // Hide the card
+    }
+  });
+}
+
+// Get the filter buttons
+const allBtn = document.getElementById("allBtn");
+const frontendBtn = document.getElementById("frontendBtn");
+const reactBtn = document.getElementById("reactBtn");
+
+// Attach click event listeners to the filter buttons
+allBtn.addEventListener("click", () => filterCards("all"));
+frontendBtn.addEventListener("click", () => filterCards("frontend"));
+reactBtn.addEventListener("click", () => filterCards("react"));

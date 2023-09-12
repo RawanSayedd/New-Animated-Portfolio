@@ -135,8 +135,8 @@ body {
   text-align: center;
 }
 .img-container img {
-  border-bottom-left-radius: 10%;
-  border-bottom-right-radius: 10%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   width: 400px;
   height: auto;
   filter: drop-shadow(25px 12px 12px #789694);
@@ -267,13 +267,37 @@ section .content.show {
   transform: translateX(0);
 } */
 footer section {
-  height: 100px;
+  height: 90px;
+}
+#portfolio {
+  height: auto;
+}
+.portfolio .above-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portfolio .above-btns button {
+  background: #8db1af;
+  border-radius: 20px;
+  border: none;
+  transition: 0.3s ease;
+  width: 200px;
+  height: 40px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+.portfolio .above-btns button:hover {
+  background: rgba(141, 177, 175, 0.8);
+  color: #45505b;
+  transform: scale(1.05);
 }
 
 .portfolio .card {
   overflow: hidden;
   border-radius: 15px;
   position: relative;
+  margin-bottom: 20px;
 }
 .portfolio .card-img {
   object-fit: cover;
@@ -308,6 +332,7 @@ footer section {
 .portfolio .card .card-btn .live {
   border-right: 1px solid #272829;
 }
+
 /* =============================== */
 /* Portfolio section ends here*/
 /* =============================== */
@@ -351,7 +376,7 @@ footer section {
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
-}
+  /* }
 .carousel-indicators {
   bottom: -90px;
   margin-top: 20px;

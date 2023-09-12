@@ -1,0 +1,151 @@
+  <div class="row mx-auto my-auto">
+                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#recipeCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="1"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="2"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="3"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="4"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="5"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="6"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="7"></li>
+
+                  </ol>  
+                  <div class="carousel-inner w-100 mt-5" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="col-md-4">
+                                <div class="card">
+                                  <img class="card-img" src="images/portfolio/22.PNG" alt="">
+                                  <div class="card-btn">
+                                    <a class="live"  href="https://rawansayedd.github.io/Coffee-Shop-Website" target="_blank">Live Demo</a>
+                                    <a href="https://github.com/RawanSayedd/Coffee-Shop-Website" target="_blank">Code</a>
+                                  </div>
+                                  <div class="card-body text-center">
+                                    <h3 class="card-title mb-4"> Coffee Shop Website</h3>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-4">
+                              <div class="card">
+                                <img class="card-img" src="images/portfolio/grocery.JPG" alt="">
+                                <div class="card-btn">
+                                  <a class="live"  href="https://rawansayedd.github.io/Grocery-Shop-Website/" target="_blank">Live Demo</a>
+                                  <a href="https://github.com/RawanSayedd/Grocery-Shop-Website" target="_blank">Code</a>
+                                </div>
+                                <div class="card-body text-center">
+                                  <h3 class="card-title mb-4"> Grocery Shop Website</h3>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="col-md-4">
+                            <div class="card">
+                              <img class="card-img" src="images/portfolio/flower.JPG" alt="">
+                              <div class="card-btn">
+                                <a class="live"  href="https://rawansayedd.github.io/Flower-Shop-Website/" target="_blank">Live Demo</a>
+                                <a href="https://github.com/RawanSayedd/Flower-Shop-Website" target="_blank">Code</a>
+                              </div>
+                              <div class="card-body text-center">
+                                <h3 class="card-title mb-4"> Flower Shop Website</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="col-md-4">
+                          <div class="card">
+                            <img class="card-img" src="images/portfolio/nature.JPG" alt="">
+                            <div class="card-btn">
+                              <a class="live"  href="https://rawansayedd.github.io/Responsive-nature-website/" target="_blank">Live Demo</a>
+                              <a href="https://github.com/RawanSayedd/Responsive-nature-website" target="_blank">Code</a>
+                            </div>
+                            <div class="card-body text-center">
+                              <h3 class="card-title mb-4"> Nature Website</h3>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-4">
+                        <div class="card">
+                          <img class="card-img" src="images/portfolio/Capture2.PNG" alt="">
+                          <div class="card-btn">
+                            <a class="live"  href="https://rawansayedd.github.io/Bootstrap-template/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/RawanSayedd/Bootstrap-template" target="_blank">Code</a>
+                          </div>
+                          <div class="card-body text-center">
+                            <h3 class="card-title mb-4"> Bootstrap Template</h3>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-4">
+                      <div class="card">
+                        <img class="card-img" src="images/portfolio/Capture.PNG" alt="">
+                        <div class="card-btn">
+                          <a class="live"  href="https://rawansayedd.github.io/Iphone-Demo/" target="_blank">Live Demo</a>
+                          <a href="https://github.com/RawanSayedd/Iphone-Demo" target="_blank">Code</a>
+                        </div>
+                        <div class="card-body text-center">
+                          <h3 class="card-title mb-4"> Iphone Demo Website</h3>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <div class="col-md-4">
+                    <div class="card">
+                      <img class="card-img" src="images/portfolio/ecommerce shopping react.JPG" alt="">
+                      <div class="card-btn">
+                        <a class="live"  href="https://rawansayedd.github.io/React-ecommerce-shopping-website/" target="_blank">Live Demo</a>
+                        <a href="https://github.com/RawanSayedd/React-ecommerce-shopping-website" target="_blank">Code</a>
+                      </div>
+                      <div class="card-body text-center">
+                        <h3 class="card-title mb-4"> React Shopping Cart</h3>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-4">
+                  <div class="card">
+                    <img class="card-img" src="images/portfolio/pizza menu react.JPG" alt="">
+                    <div class="card-btn">
+                      <a class="live"  href="https://rawansayedd.github.io/React-Pizza-Shop-Website/" target="_blank">Live Demo</a>
+                      <a href="https://github.com/RawanSayedd/React-Pizza-Shop-Website" target="_blank">Code</a>
+                    </div>
+                    <div class="card-body text-center">
+                      <h3 class="card-title mb-4"> React Pizza Menu</h3>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="carousel-item">
+            <div class="col-md-4">
+                <div class="card">
+                  <img class="card-img" src="images/portfolio/movie react.JPG" alt="">
+                  <div class="card-btn">
+                    <a class="live"  href="https://rawansayedd.github.io/Movie-App/" target="_blank">Live Demo</a>
+                    <a href="https://github.com/RawanSayedd/Movie-App" target="_blank">Code</a>
+                  </div>
+                  <div class="card-body text-center">
+                    <h3 class="card-title mb-4"> React Movie-App</h3>
+                  </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                    <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
