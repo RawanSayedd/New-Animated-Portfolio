@@ -141,3 +141,63 @@ const reactBtn = document.getElementById("reactBtn");
 allBtn.addEventListener("click", () => filterCards("all"));
 frontendBtn.addEventListener("click", () => filterCards("frontend"));
 reactBtn.addEventListener("click", () => filterCards("react"));
+
+/////////////////
+//countboxxxx
+// Get all the count boxes
+const countBoxes = document.querySelectorAll(".count-box");
+
+// Function to check if an element is in viewport
+const isInViewport = (element) => {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+// Debounce function to limit the frequency of calculations and updates
+const debounce = (func, delay) => {
+  let timeoutId;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(context, args);
+    }, delay);
+  };
+};
+
+const incrementNumbersOnScroll = () => {
+  countBoxes.forEach((countBox) => {
+    const countElement = countBox.querySelector("span");
+    const countLimit = parseInt(countElement.innerText);
+    let count = 0;
+    let isCounting = false;
+
+    const handleScroll = debounce(() => {
+      if (isInViewport(countBox)) {
+        if (!isCounting) {
+          isCounting = true;
+          const interval = setInterval(() => {
+            if (count < countLimit) {
+              count++;
+              countElement.innerText = count;
+            } else {
+              clearInterval(interval);
+              isCounting = false;
+            }
+          }, 1); // Adjust the interval duration if desired
+        }
+      }
+    }, 50); // Adjust the debounce delay if desired
+
+    window.addEventListener("scroll", handleScroll);
+  });
+};
+
+incrementNumbersOnScroll();

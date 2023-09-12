@@ -298,6 +298,14 @@ footer section {
   border-radius: 15px;
   position: relative;
   margin-bottom: 20px;
+  transition: 0.3s ease;
+  box-shadow: 0px 15px 90px 10px rgba(110, 123, 131, 0.05);
+}
+.portfolio .card:hover {
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.5);
+}
+.portfolio .card:hover img {
+  transform: scale(1.1);
 }
 .portfolio .card-img {
   object-fit: cover;
@@ -604,7 +612,7 @@ footer a .btn {
 }
 
 @media (max-width: 765px) {
-  html {
+  body {
     overflow-x: hidden;
   }
   .header {
@@ -674,15 +682,12 @@ footer a .btn {
   .services .icon-box {
     width: 400px;
   }
-  .carousel-indicators {
-    bottom: -60px;
-  }
-  .carousel-indicators li {
-    width: 7px;
-    height: 3px;
+  .portfolio .above-btns button {
+    font-size: 14px;
+    color: #272829;
   }
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .carousel-inner .carousel-item > div {
     display: none;
   }
@@ -697,7 +702,7 @@ footer a .btn {
   display: flex;
 }
 
-/* display 3 */
+/* display 3 
 @media (min-width: 768px) {
   .carousel-inner .carousel-item-right.active,
   .carousel-inner .carousel-item-next {
@@ -713,4 +718,4 @@ footer a .btn {
 .carousel-inner .carousel-item-right,
 .carousel-inner .carousel-item-left {
   transform: translateX(0);
-}
+} */
