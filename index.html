@@ -66,8 +66,8 @@
             <h1 class="title-name">Rawan Sayed Aly</h1>
             <p class="section-text-2"><spanc class="typing-text"></spanc></p>
             <div class="btn-container">
-              <button class="btn"><a href="#">Download Resume</a></button>
-              <button class="btn"><a href="#">Contact Me</a></button>
+              <button class="btn"><a href="/Rawan Sayed Dev.pdf" target="_blank">Download Resume</a></button>
+              <button class="btn"><a href="#contact">Contact Me</a></button>
             </div>
             <div class="icon-container">
               <i class="fa-brands fa-linkedin-in"></i>
@@ -147,7 +147,7 @@
                   <h1 class="heading-style"><span>Portfolio </span></h1>
               </div>
               <div class="above-btns">
-                <button id="allBtn">All</button>
+                <button id="allBtn" class="active">All</button>
                 <button id="frontendBtn">Front-End Websites</button>
                 <button id="reactBtn">React Apps</button>
               </div>
@@ -565,10 +565,11 @@
     <script src="bootstrap.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="script.js"></script>
-    <script>ScrollReveal({
-      reset: true,
-      distance: "60px",
-      duration: 2000,
+    <script>
+    ScrollReveal({
+      reset: false,
+      distance: "50px",
+      duration: 1000,
       delay: 400,
     });
     

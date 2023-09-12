@@ -20,43 +20,22 @@ var typed = new Typed(".typing-text", {
   typeSpeed: 120,
   loop: true,
 });
-// carousel
-$("#recipeCarousel").carousel({
-  interval: 10000,
+//////
+///active menu
+const menuItems = document.querySelectorAll(".menu-list a");
+
+// Add click event listener to each menu item
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener("click", function () {
+    // Remove active class from all menu items
+    menuItems.forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    // Add active class to the clicked menu item
+    this.classList.add("active");
+  });
 });
-
-$(".carousel .carousel-item").each(function () {
-  var minPerSlide = 3;
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(":first");
-  }
-  next.children(":first-child").clone().appendTo($(this));
-
-  for (var i = 0; i < minPerSlide; i++) {
-    next = next.next();
-    if (!next.length) {
-      next = $(this).siblings(":first");
-    }
-
-    next.children(":first-child").clone().appendTo($(this));
-  }
-});
-//scroll animation
-// const boxes = document.querySelectorAll(".content");
-// function checkBoxes() {
-//   const triggerBottom = (window.innerHeight / 5) * 4;
-//   boxes.forEach((box, idx) => {
-//     const boxTop = box.getBoundingClientRect().top;
-//     if (boxTop < triggerBottom) {
-//       box.classList.add("show");
-//     } else {
-//       box.classList.add("show");
-//     }
-//   });
-// }
-// window.addEventListener("scroll", checkBoxes);
-
 //progres bar animated
 function move() {
   var skills = [
@@ -67,44 +46,63 @@ function move() {
     { id: "myBar5", targetWidth: 70 },
   ];
 
-  for (var i = 0; i < skills.length; i++) {
-    var skill = skills[i];
-    if (!skill.animated && isScrolledIntoView(skill.id)) {
-      animateProgress(skill.id, skill.targetWidth);
-      skill.animated = true;
+  function animateProgress(id, targetWidth) {
+    var elem = document.getElementById(id);
+    var width = 0;
+    var increment = 1;
+    var id = setInterval(frame, 7);
+
+    function frame() {
+      if (width >= targetWidth) {
+        clearInterval(id);
+      } else {
+        width += increment;
+        elem.style.width = width + "%";
+      }
     }
   }
-}
-function animateProgress(id, targetWidth) {
-  var elem = document.getElementById(id);
-  var width = 0;
-  var increment = 1;
-  var id = setInterval(frame, 7);
 
-  function frame() {
-    if (width >= targetWidth) {
-      clearInterval(id);
-    } else {
-      width += increment;
-      elem.style.width = width + "%";
+  function isScrolledIntoView(id) {
+    var elem = document.getElementById(id);
+    var rect = elem.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+    var isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
+    return isVisible;
+  }
+
+  function checkAndAnimate() {
+    for (var i = 0; i < skills.length; i++) {
+      var skill = skills[i];
+      if (!skill.animated && isScrolledIntoView(skill.id)) {
+        animateProgress(skill.id, skill.targetWidth);
+        skill.animated = true;
+      }
     }
   }
+
+  window.addEventListener("scroll", checkAndAnimate);
+  window.addEventListener("resize", checkAndAnimate);
+  checkAndAnimate();
 }
 
-function isScrolledIntoView(id) {
-  var elem = document.getElementById(id);
-  var rect = elem.getBoundingClientRect();
-  var elemTop = rect.top;
-  var elemBottom = rect.bottom;
-
-  // Check if the element is fully visible in the viewport
-  var isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
-  return isVisible;
-}
-
-window.addEventListener("scroll", move);
+window.addEventListener("load", move);
 
 ///////////////////////////
+///portfolio btns
+const buttons = document.querySelectorAll(".above-btns button");
+
+// Add click event listener to each button
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    // Remove active class from all buttons
+    buttons.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    this.classList.add("active");
+  });
+});
 //portfolio cards
 window.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".col-md-4"); // Select all the card elements
