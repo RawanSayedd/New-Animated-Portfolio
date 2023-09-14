@@ -156,9 +156,7 @@ body {
   font-size: 3rem;
   letter-spacing: 1px;
 }
-.main-content .btn-container {
-  display: flex;
-}
+
 .main-content .btn-container button {
   margin-right: 10px;
   background: #8db1af;
@@ -564,81 +562,7 @@ footer section {
 footer a .btn {
   border-radius: 10px;
 }
-#btn-download {
-  cursor: pointer;
-  display: block;
 
-  border-radius: 50%;
-  -webkit-tap-highlight-color: transparent;
-}
-
-#btn-download:hover {
-  background: rgba(#223254, 0.03);
-}
-
-#btn-download svg {
-  margin-left: 6px;
-  fill: none;
-  transform: translate3d(0, 0, 0);
-}
-
-#btn-download svg polyline,
-#btn-download svg path {
-  stroke: white;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: all 0.3s ease;
-  transition-delay: 0.3s;
-}
-
-#btn-download svg path#check {
-  stroke-dasharray: 38;
-  stroke-dashoffset: 114;
-  transition: all 0.4s ease;
-}
-
-#btn-download.downloaded svg .svg-out {
-  opacity: 0;
-  animation: drop 0.3s linear;
-  transition-delay: 0.4s;
-}
-
-#btn-download.downloaded svg path#check {
-  stroke: #20cca5;
-  stroke-dashoffset: 174;
-  transition-delay: 0.4s;
-}
-
-@keyframes drop {
-  20% {
-    transform: translate(0, -3px);
-  }
-  80% {
-    transform: translate(0, 2px);
-  }
-  95% {
-    transform: translate(0, 0);
-  }
-}
-
-.credit {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  transition: all 0.2s ease;
-  -webkit-user-select: none;
-  user-select: none;
-  opacity: 0.6;
-}
-
-.credit img {
-  width: 72px;
-}
-
-.credit:hover {
-  transform: scale(0.95);
-}
 @media (max-width: 765px) {
   body {
     overflow-x: hidden;

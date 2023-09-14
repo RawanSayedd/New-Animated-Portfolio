@@ -199,24 +199,3 @@ const incrementNumbersOnScroll = () => {
 };
 
 incrementNumbersOnScroll();
-
-/////download button
-$("#btn-download").click(function () {
-  $(this).toggleClass("downloaded");
-});
-const btnDownload = document.getElementById("btn-download");
-btnDownload.addEventListener("click", () => {
-  const fileUrl = "D:FRONT-END DEVELOPMENTMy projectsNew Portfolio";
-  const fileName = "Rawan_Sayed_Dev.pdf";
-
-  const link = document.createElement("a");
-  link.href = fileUrl;
-  link.download = fileName;
-
-  link.style.display = "none";
-  document.body.appendChild(link);
-
-  link.click();
-
-  document.body.removeChild(link);
-});
