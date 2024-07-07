@@ -23,19 +23,42 @@ var typed = new Typed(".typing-text", {
 //////
 ///active menu
 const menuItems = document.querySelectorAll(".menu-list a");
+const sections = document.querySelectorAll("section"); // Assuming your sections have the "section" tag
+
+// Function to remove active class from all menu items
+function removeActiveClasses() {
+  menuItems.forEach((item) => {
+    item.classList.remove("active");
+  });
+}
+
+// Function to add active class to the current section's menu item
+function addActiveClassToMenuItem() {
+  let index = sections.length;
+
+  while (--index && window.scrollY + 60 < sections[index].offsetTop) {} // Adjust offset as needed
+
+  removeActiveClasses();
+  menuItems[index].classList.add("active");
+}
 
 // Add click event listener to each menu item
 menuItems.forEach((menuItem) => {
   menuItem.addEventListener("click", function () {
     // Remove active class from all menu items
-    menuItems.forEach((item) => {
-      item.classList.remove("active");
-    });
+    removeActiveClasses();
 
     // Add active class to the clicked menu item
     this.classList.add("active");
   });
 });
+
+// Add scroll event listener to window
+window.addEventListener("scroll", addActiveClassToMenuItem);
+
+// Initial call to set the correct menu item based on current scroll position
+addActiveClassToMenuItem();
+
 //progres bar animated
 function move() {
   var skills = [
@@ -104,41 +127,128 @@ buttons.forEach((button) => {
   });
 });
 //portfolio cards
+// window.addEventListener("DOMContentLoaded", function () {
+//   const cards = document.querySelectorAll(".col-md-4"); // Select all the card elements
+//   const showMoreBtn = document.getElementById("show-more");
+//   let currentlyVisibleCount = 3; // Number of cards initially visible
+
+//   // Show only a subset of cards, e.g., the first two
+//   function showCards(startIndex, count) {
+//     for (let i = startIndex; i < startIndex + count; i++) {
+//       if (cards[i]) {
+//         cards[i].style.display = "block";
+//       }
+//     }
+//   }
+//   showCards(0, currentlyVisibleCount);
+
+//   showMoreBtn.addEventListener("click", function () {
+//     const currentlyVisibleCards = document.querySelectorAll(
+//       ".col-md-4[style='display: block;']"
+//     ).length;
+//     showCards(currentlyVisibleCards, 3);
+//     currentlyVisibleCount += 3;
+
+//     // Hide the "Show More" button if all cards are visible
+//     if (currentlyVisibleCount >= cards.length) {
+//       showMoreBtn.style.display = "none";
+//     }
+//   });
+// });
+
+// // Function to filter the cards based on the button clicked
+// function filterCards(category) {
+//   const cards = document.querySelectorAll(".col-md-4"); // Get all the cards
+
+//   cards.forEach((card) => {
+//     // Check if the category matches or if the category is 'all'
+//     if (category === "all" || card.classList.contains(category)) {
+//       card.style.display = "block"; // Show the card
+//     } else {
+//       card.style.display = "none"; // Hide the card
+//     }
+//   });
+// }
+
+// // Get the filter buttons
+// const allBtn = document.getElementById("allBtn");
+// const frontendBtn = document.getElementById("frontendBtn");
+// const reactBtn = document.getElementById("reactBtn");
+
+// // Attach click event listeners to the filter buttons
+// allBtn.addEventListener("click", () => filterCards("all"));
+// frontendBtn.addEventListener("click", () => filterCards("frontend"));
+// reactBtn.addEventListener("click", () => filterCards("react"));
 window.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".col-md-4"); // Select all the card elements
+  const showMoreBtn = document.getElementById("show-more");
+  let currentlyVisibleCount = 3; // Number of cards initially visible
 
-  // Show only a subset of cards, e.g., the first two
-  for (let i = 0; i < cards.length; i++) {
-    if (i < 3) {
-      cards[i].style.display = "block";
-    } else {
-      cards[i].style.display = "none";
+  // Function to show a subset of cards
+  function showCards(startIndex, count) {
+    for (let i = startIndex; i < startIndex + count; i++) {
+      if (cards[i]) {
+        cards[i].style.display = "block";
+      }
     }
   }
-});
-// Function to filter the cards based on the button clicked
-function filterCards(category) {
-  const cards = document.querySelectorAll(".col-md-4"); // Get all the cards
 
-  cards.forEach((card) => {
-    // Check if the category matches or if the category is 'all'
-    if (category === "all" || card.classList.contains(category)) {
-      card.style.display = "block"; // Show the card
-    } else {
-      card.style.display = "none"; // Hide the card
+  // Initially show the first 3 cards
+  cards.forEach((card, index) => {
+    card.style.display = index < currentlyVisibleCount ? "block" : "none";
+  });
+
+  // Show more cards when the "Show More" button is clicked
+  showMoreBtn.addEventListener("click", function () {
+    const currentlyVisibleCards = document.querySelectorAll(
+      ".col-md-4[style='display: block;']"
+    ).length;
+    showCards(currentlyVisibleCards, 3);
+    currentlyVisibleCount += 3;
+
+    // Hide the "Show More" button if all cards are visible
+    if (currentlyVisibleCount >= cards.length) {
+      showMoreBtn.style.display = "none";
     }
   });
-}
 
-// Get the filter buttons
-const allBtn = document.getElementById("allBtn");
-const frontendBtn = document.getElementById("frontendBtn");
-const reactBtn = document.getElementById("reactBtn");
+  // Function to filter the cards based on the button clicked
+  function filterCards(category) {
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      if (category === "all" || card.classList.contains(category)) {
+        card.style.display = visibleCount < 3 ? "block" : "none";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
 
-// Attach click event listeners to the filter buttons
-allBtn.addEventListener("click", () => filterCards("all"));
-frontendBtn.addEventListener("click", () => filterCards("frontend"));
-reactBtn.addEventListener("click", () => filterCards("react"));
+    // Reset "Show More" button visibility for the "All" category
+    if (category === "all" && visibleCount > currentlyVisibleCount) {
+      showMoreBtn.style.display = "block";
+    } else if (category !== "all" && visibleCount > 3) {
+      showMoreBtn.style.display = "block";
+    } else {
+      showMoreBtn.style.display = "none";
+    }
+
+    // Reset currently visible count when switching categories
+    if (category !== "all") {
+      currentlyVisibleCount = 3;
+    }
+  }
+
+  // Get the filter buttons
+  const allBtn = document.getElementById("allBtn");
+  const frontendBtn = document.getElementById("frontendBtn");
+  const reactBtn = document.getElementById("reactBtn");
+
+  // Attach click event listeners to the filter buttons
+  allBtn.addEventListener("click", () => filterCards("all"));
+  frontendBtn.addEventListener("click", () => filterCards("frontend"));
+  reactBtn.addEventListener("click", () => filterCards("react"));
+});
 
 /////////////////
 //countboxxxx

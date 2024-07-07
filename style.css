@@ -265,10 +265,21 @@ footer section {
 #portfolio {
   height: auto;
 }
-.portfolio .above-btns {
+.portfolio .above-btns,
+.portfolio #show-more {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.portfolio #show-more-button button {
+  margin: 30px auto;
+  background: #8db1af;
+  color: #011426;
+  border-radius: 20px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  transition: 0.3s ease;
 }
 .portfolio .above-btns button {
   background: #8db1af;
@@ -283,7 +294,8 @@ footer section {
 .portfolio .above-btns .active {
   outline: 1px solid #272829;
 }
-.portfolio .above-btns button:hover {
+.portfolio .above-btns button:hover,
+.portfolio #show-more-button button:hover {
   background: rgba(141, 177, 175, 0.8);
   color: #45505b;
   transform: scale(1.05);
